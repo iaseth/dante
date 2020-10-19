@@ -24,10 +24,9 @@ typedef DanteCanto_t *DanteCanto;
 
 typedef struct {
 	DanteCanto *cantos;
+	DanteQuote *quotes;
 	uint8_t canto_count;
 	uint8_t canto_capacity;
-
-	DanteQuote *quotes;
 	uint8_t quote_count;
 	uint8_t quote_capacity;
 } Dante_t;
@@ -35,8 +34,9 @@ typedef struct {
 typedef Dante_t *Dante;
 
 
-Dante dante_new_dante ();
+void dante_print_struct_sizes ();
 
+Dante dante_new_dante ();
 Dante dante_delete_dante (Dante dante);
 
 
