@@ -21,7 +21,16 @@ DANTE_OBJS = ${addprefix build/obj/, ${DANTE_OBJ_NAMES}}
 DANTE_STATIC_LIB = build/lib/libdante.a
 DANTE_DYNAMIC_LIB = build/lib/libdante.so
 
-default: lib
+MAIN_SRC = src/dante.c
+MAIN_BIN = build/dante
+
+default: ${MAIN_BIN}
+
+run: ${MAIN_BIN}
+	@./${MAIN_BIN}
+
+${MAIN_BIN}: ${MAIN_SRC} ${DANTE_STATIC_LIB}
+	${CC} $^ -o $@ ${INCLUDE_FLAG}
 
 debug:
 	${eval AMP := }
