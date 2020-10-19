@@ -3,7 +3,7 @@
 
 #include "dante_dante.h"
 
-DanteQuote dante_new_quote (Dante dante);
+DanteQuote dante_new_quote (Dante dante, char *text);
 DanteQuote dante_delete_quote (Dante dante, DanteQuote quote);
 
 
