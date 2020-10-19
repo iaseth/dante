@@ -39,6 +39,18 @@ lib: ${DANTE_STATIC_LIB} ${DANTE_DYNAMIC_LIB}
 
 redo: clean default
 
+
+
+DANTE_TEST_NAMES = creation
+DANTE_TEST_NAMES += deletion
+DANTE_TEST_EXE_NAMES = ${addsuffix .test, ${DANTE_TEST_NAMES}}
+DANTE_TEST_EXES = ${addprefix build/test/, ${DANTE_TEST_EXE_NAMES}}
+
+${DANTE_TEST_EXES}: build/test/%.test: test/%.c ${DANTE_STATIC_LIB}
+	${CC} $^ ${DANTE_STATIC_LIB} ${INCLUDE_FLAG} -o $@
+
+test: ${DANTE_TEST_EXES}
+
 clean:
 	${RM} ${DANTE_OBJS}
 	${RM} ${DANTE_STATIC_LIB}
