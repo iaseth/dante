@@ -33,10 +33,8 @@ typedef Dante_t *Dante;
 
 
 Dante dante_new_dante ();
-DanteQuote dante_new_quote (Dante dante);
 
 Dante dante_delete_dante (Dante dante);
-DanteQuote dante_delete_quote (Dante dante, DanteQuote quote);
 
 
 
