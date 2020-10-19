@@ -3,5 +3,6 @@
 #include "dante.h"
 
 int main (int argc, char const *argv[]) {
-	printf("Hello, World\n");
+	Dante dante = dante_new_dante();
+	dante = dante_delete_dante(dante);
 }
