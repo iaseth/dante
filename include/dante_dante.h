@@ -6,6 +6,25 @@
 
 #include <stdint.h>
 
+
+typedef struct {
+	char *buffer;
+	uint8_t length;
+	uint8_t capacity;
+} DanteQuote_t;
+
+typedef DanteQuote_t *DanteQuote;
+
+
+typedef struct {
+	DanteQuote *quotes;
+	uint8_t length;
+	uint8_t capacity;
+} DanteCanto_t;
+
+typedef DanteCanto_t *DanteCanto;
+
+
 typedef struct {
 	DanteCanto *cantos;
 	uint8_t number_of_cantos;
@@ -14,6 +33,7 @@ typedef struct {
 } Dante_t;
 
 typedef Dante_t *Dante;
+
 
 Dante dante_new_dante ();
 DanteQuote dante_new_quote (Dante dante);
