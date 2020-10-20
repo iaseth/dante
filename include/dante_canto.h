@@ -4,7 +4,7 @@
 #include "dante_dante.h"
 
 DanteCanto dante_new_canto (Dante dante);
-DanteCanto dante_delete_canto (Dante dante, DanteCanto canto);
+DanteCanto dante_delete_canto (DanteCanto canto);
 
 
 

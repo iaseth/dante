@@ -16,14 +16,14 @@ int main (int argc, char const *argv[]) {
 		//dante_print_quote_details(license);
 	}
 
-	DanteQuote empty = dante_duplicate_quote(dante, quote);
+	DanteQuote empty = dante_duplicate_quote(quote);
 	dante_print_quote_details(empty);
 
 	dante_print_struct_sizes();
 
-	empty = dante_delete_quote(dante, empty);
-	license = dante_delete_quote(dante, license);
-	quote = dante_delete_quote(dante, quote);
-	canto = dante_delete_canto(dante, canto);
+	empty = dante_delete_quote(empty);
+	license = dante_delete_quote(license);
+	quote = dante_delete_quote(quote);
+	canto = dante_delete_canto(canto);
 	dante = dante_delete_dante(dante);
 }

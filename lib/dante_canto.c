@@ -10,7 +10,7 @@ DanteCanto dante_new_canto (Dante dante) {
 	return canto;
 }
 
-DanteCanto dante_delete_canto (Dante dante, DanteCanto canto) {
+DanteCanto dante_delete_canto (DanteCanto canto) {
 	free(canto->quotes);
 	free(canto);
 	return NULL;
