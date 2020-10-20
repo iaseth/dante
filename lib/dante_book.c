@@ -42,8 +42,8 @@ DanteBook dante_new_dante () {
 }
 
 
-void dante_add_quote_to_dante (DanteBook book, DanteQuote quote) {
-	quote->owner = book;
+void dante_add_quote_to_book (DanteBook book, DanteQuote quote) {
+	quote->book = book;
 	if (book->quote_count == book->quote_capacity) {
 		// expand book->quotes
 	}
@@ -51,8 +51,8 @@ void dante_add_quote_to_dante (DanteBook book, DanteQuote quote) {
 	book->quote_count++;
 }
 
-void dante_add_canto_to_dante (DanteBook book, DanteCanto canto) {
-	canto->owner = book;
+void dante_add_canto_to_book (DanteBook book, DanteCanto canto) {
+	canto->book = book;
 	if (book->canto_count == book->canto_capacity) {
 		// expand book->cantos
 	}

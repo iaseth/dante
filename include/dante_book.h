@@ -29,7 +29,7 @@ struct DanteQuote_t {
 	char *buffer;
 	uint32_t length;
 	uint32_t capacity;
-	DanteBook owner;
+	DanteBook book;
 };
 
 
@@ -37,7 +37,7 @@ struct DanteCanto_t {
 	DanteQuote *quotes;
 	uint32_t quote_count;
 	uint32_t quote_capacity;
-	DanteBook owner;
+	DanteBook book;
 };
 
 
@@ -59,8 +59,8 @@ void dante_print_dante_details (DanteBook book);
 
 DanteBook dante_new_dante ();
 
-void dante_add_quote_to_dante (DanteBook book, DanteQuote quote);
-void dante_add_canto_to_dante (DanteBook book, DanteCanto canto);
+void dante_add_quote_to_book (DanteBook book, DanteQuote quote);
+void dante_add_canto_to_book (DanteBook book, DanteCanto canto);
 
 DanteBook dante_delete_dante (DanteBook book);
 
