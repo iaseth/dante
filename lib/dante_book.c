@@ -42,7 +42,9 @@ DanteBook dante_new_dante () {
 }
 
 
-void dante_add_quote_to_book (DanteBook book, DanteQuote quote) {
+void
+dante_add_quote_to_book (DanteBook book, DanteQuote quote)
+{
 	quote->book = book;
 	if (book == NULL) {
 		return;
@@ -54,7 +56,9 @@ void dante_add_quote_to_book (DanteBook book, DanteQuote quote) {
 	book->quote_count++;
 }
 
-void dante_add_canto_to_book (DanteBook book, DanteCanto canto) {
+void
+dante_add_canto_to_book (DanteBook book, DanteCanto canto)
+{
 	canto->book = book;
 	if (book->canto_count == book->canto_capacity) {
 		// expand book->cantos
@@ -64,7 +68,9 @@ void dante_add_canto_to_book (DanteBook book, DanteCanto canto) {
 }
 
 
-DanteBook dante_delete_dante (DanteBook book) {
+DanteBook
+dante_delete_dante (DanteBook book)
+{
 	for (int i = 0; i < book->quote_count; ++i) {
 		dante_delete_quote(book->quotes[i]);
 	}

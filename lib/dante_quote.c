@@ -3,11 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-DanteQuote dante_new_quote (DanteBook book) {
+DanteQuote
+dante_new_quote (DanteBook book)
+{
 	return dante_new_quote_n(book, DANTE_MINIMUM_CHARS);
 }
 
-DanteQuote dante_new_quote_n (DanteBook book, uint32_t length) {
+DanteQuote
+dante_new_quote_n (DanteBook book, uint32_t length)
+{
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	dante_add_quote_to_book(book, quote);
 	quote->buffer = malloc((length + 1) * sizeof(char));
@@ -17,7 +21,9 @@ DanteQuote dante_new_quote_n (DanteBook book, uint32_t length) {
 	return quote;
 }
 
-DanteQuote dante_new_quote_s (DanteBook book, char *text) {
+DanteQuote
+dante_new_quote_s (DanteBook book, char *text)
+{
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	dante_add_quote_to_book(book, quote);
 	quote->length = strlen(text);
@@ -27,7 +33,9 @@ DanteQuote dante_new_quote_s (DanteBook book, char *text) {
 	return quote;
 }
 
-DanteQuote dante_new_quote_q (DanteQuote source_quote) {
+DanteQuote
+dante_new_quote_q (DanteQuote source_quote)
+{
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	dante_add_quote_to_book(source_quote->book, quote);
 	quote->buffer = malloc((source_quote->length + 1) * sizeof(char));
@@ -37,11 +45,15 @@ DanteQuote dante_new_quote_q (DanteQuote source_quote) {
 	return quote;
 }
 
-DanteQuote dante_duplicate_quote (DanteQuote source_quote) {
+DanteQuote
+dante_duplicate_quote (DanteQuote source_quote)
+{
 	return dante_new_quote_q(source_quote);
 }
 
-DanteQuote dante_new_quote_from_file (DanteBook book, char *filename) {
+DanteQuote
+dante_new_quote_from_file (DanteBook book, char *filename)
+{
 	FILE *fp = fopen(filename, "r");
 	if (fp == NULL){
 		return NULL;
@@ -65,7 +77,9 @@ DanteQuote dante_new_quote_from_file (DanteBook book, char *filename) {
 }
 
 
-DanteQuote dante_append_quote (DanteQuote q1, DanteQuote q2) {
+DanteQuote
+dante_append_quote (DanteQuote q1, DanteQuote q2)
+{
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	dante_add_quote_to_book(q1->book, quote);
 	quote->length = q1->length + q2->length;
@@ -77,7 +91,9 @@ DanteQuote dante_append_quote (DanteQuote q1, DanteQuote q2) {
 }
 
 
-DanteQuote dante_delete_quote (DanteQuote quote) {
+DanteQuote
+dante_delete_quote (DanteQuote quote)
+{
 	if (quote != NULL) {
 		free(quote->buffer);
 		free(quote);

@@ -5,7 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-DanteCanto dante_new_canto (DanteBook book) {
+DanteCanto
+dante_new_canto (DanteBook book)
+{
 	DanteCanto canto = malloc(sizeof(DanteCanto_t));
 	dante_add_canto_to_book(book, canto);
 	canto->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote_t));
@@ -14,7 +16,9 @@ DanteCanto dante_new_canto (DanteBook book) {
 	return canto;
 }
 
-DanteCanto dante_delete_canto (DanteCanto canto) {
+DanteCanto
+dante_delete_canto (DanteCanto canto)
+{
 	for (int i = 0; i < canto->quote_count; ++i) {
 		dante_delete_quote(canto->quotes[i]);
 	}
@@ -24,7 +28,9 @@ DanteCanto dante_delete_canto (DanteCanto canto) {
 }
 
 
-void dante_canto_double_capacity (DanteCanto canto) {
+void
+dante_canto_double_capacity (DanteCanto canto)
+{
 	if (canto == NULL) return;
 	int new_capacity = canto->quote_capacity * 2;
 	int size = new_capacity * sizeof(DanteQuote_t);
@@ -32,7 +38,9 @@ void dante_canto_double_capacity (DanteCanto canto) {
 	canto->quote_capacity = new_capacity;
 }
 
-void dante_add_quote_to_canto (DanteCanto canto, DanteQuote quote) {
+void
+dante_add_quote_to_canto (DanteCanto canto, DanteQuote quote)
+{
 	if (canto == NULL) return;
 	if (quote == NULL) return;
 	if (canto->quote_count == canto->quote_capacity) {
@@ -43,15 +51,21 @@ void dante_add_quote_to_canto (DanteCanto canto, DanteQuote quote) {
 }
 
 
-DanteCanto dante_split_words (DanteQuote quote) {
+DanteCanto
+dante_split_words (DanteQuote quote)
+{
 	return dante_split_c(quote, ' ');
 }
 
-DanteCanto dante_split_lines (DanteQuote quote) {
+DanteCanto
+dante_split_lines (DanteQuote quote)
+{
 	return dante_split_c(quote, '\n');
 }
 
-DanteCanto dante_split_c (DanteQuote quote, char c) {
+DanteCanto
+dante_split_c (DanteQuote quote, char c)
+{
 	DanteCanto canto = dante_new_canto(quote->book);
 	DanteQuote current_quote = NULL;
 	char current_string[quote->length + 1];
@@ -79,12 +93,16 @@ DanteCanto dante_split_c (DanteQuote quote, char c) {
 	return canto;
 }
 
-DanteCanto dante_split_s (DanteQuote quote, char *s) {
+DanteCanto
+dante_split_s (DanteQuote quote, char *s)
+{
 	//
 	return NULL;
 }
 
-DanteCanto dante_split_q (DanteQuote quote, DanteQuote q) {
+DanteCanto
+dante_split_q (DanteQuote quote, DanteQuote q)
+{
 	//
 	return NULL;
 }
