@@ -9,7 +9,7 @@ int main (int argc, char const *argv[]) {
 	dante_print_quote_details(quote);
 	dante_print_dante_details(dante);
 
-	printf("%s\n", *quote);
+	//printf("%s\n", *quote);
 	dante_print_struct_sizes();
 
 	quote = dante_delete_quote(dante, quote);

@@ -11,10 +11,7 @@ void dante_print_struct_sizes () {
 
 
 void dante_print_quote_details (DanteQuote quote) {
-	printf("DanteQuote details:\n");
-	printf(" content: %s\n", quote->buffer);
-	printf("  length: %d\n", quote->length);
-	printf("capacity: %d\n", quote->capacity);
+	printf("DanteQuote (\"%s\", %d/%d)\n", quote->buffer, quote->length, quote->capacity);
 }
 
 void dante_print_canto_details (DanteCanto canto) {
