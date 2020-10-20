@@ -65,8 +65,13 @@ Dante dante_delete_dante (Dante dante) {
 	for (int i = 0; i < dante->quote_count; ++i) {
 		dante_delete_quote(dante->quotes[i]);
 	}
-	free(dante->cantos);
 	free(dante->quotes);
+
+	for (int i = 0; i < dante->canto_count; ++i) {
+		dante_delete_canto(dante->cantos[i]);
+	}
+	free(dante->cantos);
+
 	free(dante);
 	return NULL;
 }

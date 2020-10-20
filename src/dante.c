@@ -21,6 +21,5 @@ int main (int argc, char const *argv[]) {
 	dante_print_canto_details(canto);
 	dante_print_dante_details(dante);
 
-	canto = dante_delete_canto(canto);
 	dante = dante_delete_dante(dante);
 }
