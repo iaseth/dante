@@ -6,8 +6,8 @@
 
 typedef struct {
 	char *buffer;
-	uint8_t length;
-	uint8_t capacity;
+	uint32_t length;
+	uint32_t capacity;
 } DanteQuote_t;
 
 typedef DanteQuote_t *DanteQuote;
@@ -15,8 +15,8 @@ typedef DanteQuote_t *DanteQuote;
 
 typedef struct {
 	DanteQuote *quotes;
-	uint8_t quote_count;
-	uint8_t quote_capacity;
+	uint32_t quote_count;
+	uint32_t quote_capacity;
 } DanteCanto_t;
 
 typedef DanteCanto_t *DanteCanto;
@@ -25,10 +25,10 @@ typedef DanteCanto_t *DanteCanto;
 typedef struct {
 	DanteCanto *cantos;
 	DanteQuote *quotes;
-	uint8_t canto_count;
-	uint8_t canto_capacity;
-	uint8_t quote_count;
-	uint8_t quote_capacity;
+	uint32_t canto_count;
+	uint32_t canto_capacity;
+	uint32_t quote_count;
+	uint32_t quote_capacity;
 } Dante_t;
 
 typedef Dante_t *Dante;
