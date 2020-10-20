@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-DanteBook dante_new_dante () {
+DanteBook dante_new_book () {
 	DanteBook book = malloc(sizeof(DanteBook_t));
 	book->cantos = malloc(DANTE_MINIMUM_CANTOS * sizeof(DanteCanto_t));
 	book->canto_count = 0;
@@ -47,7 +47,7 @@ dante_add_canto_to_book (DanteBook book, DanteCanto canto)
 
 
 DanteBook
-dante_delete_dante (DanteBook book)
+dante_delete_book (DanteBook book)
 {
 	for (int i = 0; i < book->quote_count; ++i) {
 		dante_delete_quote(book->quotes[i]);
