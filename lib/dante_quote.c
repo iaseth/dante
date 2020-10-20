@@ -12,6 +12,28 @@ DanteQuote dante_new_quote (Dante dante, char *text) {
 	return quote;
 }
 
+DanteQuote dante_new_quote_from_file (Dante dante, char *filename) {
+	FILE *fp = fopen(filename, "r");
+	if (fp == NULL){
+		return NULL;
+	}
+
+	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+
+	long p1 = ftell(fp);
+	fseek(fp, p1, SEEK_END);
+	long p2 = ftell(fp);
+	fseek(fp, p1, SEEK_SET);
+
+	quote->length = p2 - p1;
+	quote->buffer = malloc((quote->length + 1) * sizeof(char));
+	fread(quote->buffer, sizeof(char), quote->length, fp);
+	fclose(fp);
+	quote->buffer[quote->length] = '\0';
+	quote->capacity = quote->length;
+	return quote;
+}
+
 DanteQuote dante_delete_quote (Dante dante, DanteQuote quote) {
 	free(quote->buffer);
 	free(quote);
