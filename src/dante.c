@@ -4,7 +4,7 @@
 
 int main (int argc, char const *argv[]) {
 	Dante dante = dante_new_dante();
-	DanteQuote quote = dante_new_quote(dante, "Hello, Dante!");
+	DanteQuote quote = dante_new_quote_s(dante, "Hello, Dante!");
 	DanteCanto canto = dante_new_canto(dante);
 
 	dante_print_quote_details(quote);

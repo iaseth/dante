@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-DanteQuote dante_new_quote (Dante dante, char *text) {
+DanteQuote dante_new_quote_s (Dante dante, char *text) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	quote->length = strlen(text);
 	quote->buffer = malloc((quote->length + 1) * sizeof(char));
