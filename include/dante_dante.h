@@ -9,25 +9,28 @@
 #define DANTE_MINIMUM_CANTOS 16
 
 
-typedef struct {
+typedef struct Dante_t *Dante;
+typedef struct DanteQuote_t *DanteQuote;
+typedef struct DanteCanto_t *DanteCanto;
+
+
+typedef struct DanteQuote_t {
 	char *buffer;
 	uint32_t length;
 	uint32_t capacity;
+	Dante *dante;
 } DanteQuote_t;
 
-typedef DanteQuote_t *DanteQuote;
 
-
-typedef struct {
+typedef struct DanteCanto_t {
 	DanteQuote *quotes;
 	uint32_t quote_count;
 	uint32_t quote_capacity;
+	Dante *dante;
 } DanteCanto_t;
 
-typedef DanteCanto_t *DanteCanto;
 
-
-typedef struct {
+typedef struct Dante_t {
 	DanteCanto *cantos;
 	DanteQuote *quotes;
 	uint32_t canto_count;
@@ -35,8 +38,6 @@ typedef struct {
 	uint32_t quote_count;
 	uint32_t quote_capacity;
 } Dante_t;
-
-typedef Dante_t *Dante;
 
 
 void dante_print_struct_sizes ();
