@@ -1,5 +1,5 @@
-#ifndef DANTE_DANTE_H_INCLUDED
-#define DANTE_DANTE_H_INCLUDED
+#ifndef DANTE_BOOK_H_INCLUDED
+#define DANTE_BOOK_H_INCLUDED
 
 #include <stdio.h>
 #include <stdint.h>

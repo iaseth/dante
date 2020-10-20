@@ -1,4 +1,4 @@
-#include "dante_dante.h"
+#include "dante_book.h"
 
 #include "dante_quote.h"
 #include "dante_canto.h"

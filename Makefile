@@ -11,7 +11,7 @@ LINK_FLAG =
 RM = ${AMP}rm -f
 
 DANTE_MODULE_NAMES = dante
-DANTE_MODULE_NAMES += dante_dante
+DANTE_MODULE_NAMES += dante_book
 DANTE_MODULE_NAMES += dante_quote
 DANTE_MODULE_NAMES += dante_canto
 

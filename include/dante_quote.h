@@ -1,7 +1,7 @@
 #ifndef DANTE_QUOTE_H_INCLUDED
 #define DANTE_QUOTE_H_INCLUDED
 
-#include "dante_dante.h"
+#include "dante_book.h"
 
 DanteQuote dante_new_quote (Dante dante);
 DanteQuote dante_new_quote_n (Dante dante, uint32_t length);
