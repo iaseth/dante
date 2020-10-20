@@ -18,11 +18,11 @@ void dante_print_quote_details (DanteQuote quote) {
 }
 
 void dante_print_canto_details (DanteCanto canto) {
-	//
+	printf("DanteCanto (%d quotes, %d capacity)\n", canto->quote_count, canto->quote_capacity);
 }
 
 void dante_print_dante_details (Dante dante) {
-	//
+	printf("Dante (%d quotes, %d cantos)\n", dante->quote_count, dante->canto_count);
 }
 
 

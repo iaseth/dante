@@ -37,6 +37,8 @@ typedef Dante_t *Dante;
 void dante_print_struct_sizes ();
 
 void dante_print_quote_details (DanteQuote quote);
+void dante_print_canto_details (DanteCanto canto);
+void dante_print_dante_details (Dante dante);
 
 Dante dante_new_dante ();
 Dante dante_delete_dante (Dante dante);
