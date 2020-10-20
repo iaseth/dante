@@ -9,6 +9,23 @@ void dante_print_struct_sizes () {
 	printf("DanteQuote is %ld bytes.\n", sizeof(DanteQuote_t));
 }
 
+
+void dante_print_quote_details (DanteQuote quote) {
+	printf("DanteQuote details:\n");
+	printf(" content: %s\n", quote->buffer);
+	printf("  length: %d\n", quote->length);
+	printf("capacity: %d\n", quote->capacity);
+}
+
+void dante_print_canto_details (DanteCanto canto) {
+	//
+}
+
+void dante_print_dante_details (Dante dante) {
+	//
+}
+
+
 Dante dante_new_dante () {
 	Dante dante = malloc(sizeof(Dante_t));
 	return dante;
