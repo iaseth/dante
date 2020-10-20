@@ -4,9 +4,9 @@
 
 DanteCanto dante_new_canto (Dante dante) {
 	DanteCanto canto = malloc(sizeof(DanteCanto_t));
-	canto->quotes = NULL;
+	canto->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote_t));
 	canto->quote_count = 0;
-	canto->quote_capacity = 0;
+	canto->quote_capacity = DANTE_MINIMUM_QUOTES;
 	return canto;
 }
 

@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+#define DANTE_MINIMUM_CANTOS 16
+#define DANTE_MINIMUM_QUOTES 16
+
 
 typedef struct {
 	char *buffer;
