@@ -49,7 +49,12 @@ void dante_add_quote_to_dante (Dante dante, DanteQuote quote) {
 }
 
 void dante_add_canto_to_dante (Dante dante, DanteCanto canto) {
-	//
+	canto->dante = dante;
+	if (dante->canto_count == dante->canto_capacity) {
+		// expand dante->cantos
+	}
+	dante->cantos[dante->canto_count] = canto;
+	dante->canto_count++;
 }
 
 
