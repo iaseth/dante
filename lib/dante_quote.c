@@ -64,6 +64,19 @@ DanteQuote dante_new_quote_from_file (Dante dante, char *filename) {
 	return quote;
 }
 
+
+DanteQuote dante_append_quote (DanteQuote q1, DanteQuote q2) {
+	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	dante_add_quote_to_dante(q1->owner, quote);
+	quote->length = q1->length + q2->length;
+	quote->buffer = malloc((quote->length + 1) * sizeof(char));
+	strcpy(quote->buffer, q1->buffer);
+	strcpy(quote->buffer + (q1->length), q2->buffer);
+	quote->capacity = quote->length;
+	return quote;
+}
+
+
 DanteQuote dante_delete_quote (DanteQuote quote) {
 	if (quote != NULL) {
 		free(quote->buffer);

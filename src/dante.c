@@ -7,6 +7,8 @@ int main (int argc, char const *argv[]) {
 	DanteQuote quote = dante_new_quote_s(dante, "Hello, Dante!");
 	DanteCanto canto = dante_new_canto(dante);
 
+	quote = dante_append_quote(quote, quote);
+
 	DanteQuote license = dante_new_quote_from_file(dante, "LICENSE");
 	if (license != NULL) {
 		//dante_print_quote_details(license);

@@ -10,6 +10,8 @@ DanteQuote dante_new_quote_q (DanteQuote source_quote);
 DanteQuote dante_duplicate_quote (DanteQuote source_quote);
 DanteQuote dante_new_quote_from_file (Dante dante, char *filename);
 
+DanteQuote dante_append_quote (DanteQuote q1, DanteQuote q2);
+
 DanteQuote dante_delete_quote (DanteQuote quote);
 
 
