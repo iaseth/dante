@@ -16,7 +16,7 @@ int main (int argc, char const *argv[]) {
 		//dante_print_quote_details(license);
 	}
 
-	DanteQuote empty = dante_new_quote_n(dante, 20);
+	DanteQuote empty = dante_new_quote(dante);
 	dante_print_quote_details(empty);
 
 	dante_print_struct_sizes();

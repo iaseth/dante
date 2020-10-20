@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+DanteQuote dante_new_quote (Dante dante) {
+	return dante_new_quote_n(dante, DANTE_MINIMUM_CHARS);
+}
+
 DanteQuote dante_new_quote_n (Dante dante, uint32_t length) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	quote->length = 0;
