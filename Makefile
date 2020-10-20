@@ -64,5 +64,7 @@ clean:
 	${RM} ${DANTE_OBJS}
 	${RM} ${DANTE_STATIC_LIB}
 	${RM} ${DANTE_DYNAMIC_LIB}
+	${RM} ${DANTE_TEST_EXES}
+	${RM} ${MAIN_BIN}
 
 
