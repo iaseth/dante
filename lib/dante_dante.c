@@ -38,6 +38,21 @@ Dante dante_new_dante () {
 	return dante;
 }
 
+
+void dante_add_quote_to_dante (Dante dante, DanteQuote quote) {
+	quote->dante = dante;
+	if (dante->quote_count == dante->quote_capacity) {
+		// expand dante->quotes
+	}
+	dante->quotes[dante->quote_count] = quote;
+	dante->quote_count++;
+}
+
+void dante_add_canto_to_dante (Dante dante, DanteCanto canto) {
+	//
+}
+
+
 Dante dante_delete_dante (Dante dante) {
 	free(dante->cantos);
 	free(dante->quotes);

@@ -55,6 +55,10 @@ void dante_print_canto_details (DanteCanto canto);
 void dante_print_dante_details (Dante dante);
 
 Dante dante_new_dante ();
+
+void dante_add_quote_to_dante (Dante dante, DanteQuote quote);
+void dante_add_canto_to_dante (Dante dante, DanteCanto canto);
+
 Dante dante_delete_dante (Dante dante);
 
 
