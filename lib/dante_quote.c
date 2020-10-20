@@ -35,8 +35,10 @@ DanteQuote dante_new_quote_from_file (Dante dante, char *filename) {
 }
 
 DanteQuote dante_delete_quote (Dante dante, DanteQuote quote) {
-	free(quote->buffer);
-	free(quote);
+	if (quote != NULL) {
+		free(quote->buffer);
+		free(quote);
+	}
 	return NULL;
 }
 
