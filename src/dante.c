@@ -3,7 +3,7 @@
 #include "dante.h"
 
 int main (int argc, char const *argv[]) {
-	Dante dante = dante_new_dante();
+	Dante dante = dante_new();
 	DanteQuote quote = dante_new_quote_s(dante, "Hello, Dante!");
 	DanteCanto canto = dante_new_canto(dante);
 
@@ -21,5 +21,5 @@ int main (int argc, char const *argv[]) {
 	dante_print_canto_details(canto);
 	dante_print_dante_details(dante);
 
-	dante = dante_delete_dante(dante);
+	dante = dante_delete(dante);
 }

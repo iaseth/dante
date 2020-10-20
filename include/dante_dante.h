@@ -8,6 +8,9 @@
 #define DANTE_MINIMUM_QUOTES 16
 #define DANTE_MINIMUM_CANTOS 16
 
+#define dante_new dante_new_dante
+#define dante_delete dante_delete_dante
+
 
 struct Dante_t;
 struct DanteQuote_t;
