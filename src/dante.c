@@ -3,13 +3,13 @@
 #include "dante.h"
 
 int main (int argc, char const *argv[]) {
-	Dante dante = dante_new();
-	DanteQuote quote = dante_new_quote_s(dante, "Hello, Dante!");
-	DanteCanto canto = dante_new_canto(dante);
+	DanteBook book = dante_new();
+	DanteQuote quote = dante_new_quote_s(book, "Hello, Dante!");
+	DanteCanto canto = dante_new_canto(book);
 
 	quote = dante_append_quote(quote, quote);
 
-	DanteQuote license = dante_new_quote_from_file(dante, "LICENSE");
+	DanteQuote license = dante_new_quote_from_file(book, "LICENSE");
 	if (license != NULL) {
 		//dante_print_quote_details(license);
 	}
@@ -21,7 +21,7 @@ int main (int argc, char const *argv[]) {
 
 	dante_print_quote_details(quote);
 	dante_print_canto_details(canto);
-	dante_print_dante_details(dante);
+	dante_print_dante_details(book);
 
-	dante = dante_delete(dante);
+	book = dante_delete(book);
 }

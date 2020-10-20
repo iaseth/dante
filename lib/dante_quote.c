@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-DanteQuote dante_new_quote (Dante dante) {
-	return dante_new_quote_n(dante, DANTE_MINIMUM_CHARS);
+DanteQuote dante_new_quote (DanteBook book) {
+	return dante_new_quote_n(book, DANTE_MINIMUM_CHARS);
 }
 
-DanteQuote dante_new_quote_n (Dante dante, uint32_t length) {
+DanteQuote dante_new_quote_n (DanteBook book, uint32_t length) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	dante_add_quote_to_dante(dante, quote);
+	dante_add_quote_to_dante(book, quote);
 	quote->buffer = malloc((length + 1) * sizeof(char));
 	quote->buffer[0] = '\0';
 	quote->length = 0;
@@ -17,9 +17,9 @@ DanteQuote dante_new_quote_n (Dante dante, uint32_t length) {
 	return quote;
 }
 
-DanteQuote dante_new_quote_s (Dante dante, char *text) {
+DanteQuote dante_new_quote_s (DanteBook book, char *text) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	dante_add_quote_to_dante(dante, quote);
+	dante_add_quote_to_dante(book, quote);
 	quote->length = strlen(text);
 	quote->buffer = malloc((quote->length + 1) * sizeof(char));
 	strcpy(quote->buffer, text);
@@ -41,14 +41,14 @@ DanteQuote dante_duplicate_quote (DanteQuote source_quote) {
 	return dante_new_quote_q(source_quote);
 }
 
-DanteQuote dante_new_quote_from_file (Dante dante, char *filename) {
+DanteQuote dante_new_quote_from_file (DanteBook book, char *filename) {
 	FILE *fp = fopen(filename, "r");
 	if (fp == NULL){
 		return NULL;
 	}
 
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	dante_add_quote_to_dante(dante, quote);
+	dante_add_quote_to_dante(book, quote);
 
 	long p1 = ftell(fp);
 	fseek(fp, p1, SEEK_END);

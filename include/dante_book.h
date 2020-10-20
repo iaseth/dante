@@ -12,15 +12,15 @@
 #define dante_delete dante_delete_dante
 
 
-struct Dante_t;
+struct DanteBook_t;
 struct DanteQuote_t;
 struct DanteCanto_t;
 
-typedef struct Dante_t Dante_t;
+typedef struct DanteBook_t DanteBook_t;
 typedef struct DanteQuote_t DanteQuote_t;
 typedef struct DanteCanto_t DanteCanto_t;
 
-typedef struct Dante_t *Dante;
+typedef struct DanteBook_t *DanteBook;
 typedef struct DanteQuote_t *DanteQuote;
 typedef struct DanteCanto_t *DanteCanto;
 
@@ -29,7 +29,7 @@ struct DanteQuote_t {
 	char *buffer;
 	uint32_t length;
 	uint32_t capacity;
-	Dante owner;
+	DanteBook owner;
 };
 
 
@@ -37,11 +37,11 @@ struct DanteCanto_t {
 	DanteQuote *quotes;
 	uint32_t quote_count;
 	uint32_t quote_capacity;
-	Dante owner;
+	DanteBook owner;
 };
 
 
-struct Dante_t {
+struct DanteBook_t {
 	DanteCanto *cantos;
 	DanteQuote *quotes;
 	uint32_t canto_count;
@@ -55,14 +55,14 @@ void dante_print_struct_sizes ();
 
 void dante_print_quote_details (DanteQuote quote);
 void dante_print_canto_details (DanteCanto canto);
-void dante_print_dante_details (Dante dante);
+void dante_print_dante_details (DanteBook book);
 
-Dante dante_new_dante ();
+DanteBook dante_new_dante ();
 
-void dante_add_quote_to_dante (Dante dante, DanteQuote quote);
-void dante_add_canto_to_dante (Dante dante, DanteCanto canto);
+void dante_add_quote_to_dante (DanteBook book, DanteQuote quote);
+void dante_add_canto_to_dante (DanteBook book, DanteCanto canto);
 
-Dante dante_delete_dante (Dante dante);
+DanteBook dante_delete_dante (DanteBook book);
 
 
 

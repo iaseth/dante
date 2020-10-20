@@ -3,7 +3,7 @@
 
 #include "dante_book.h"
 
-DanteCanto dante_new_canto (Dante dante);
+DanteCanto dante_new_canto (DanteBook book);
 DanteCanto dante_delete_canto (DanteCanto canto);
 
 
