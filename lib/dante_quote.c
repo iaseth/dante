@@ -16,6 +16,15 @@ DanteQuote dante_new_quote_n (Dante dante, uint32_t length) {
 	return quote;
 }
 
+DanteQuote dante_new_quote_s (Dante dante, char *text) {
+	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	quote->length = strlen(text);
+	quote->buffer = malloc((quote->length + 1) * sizeof(char));
+	strcpy(quote->buffer, text);
+	quote->capacity = quote->length;
+	return quote;
+}
+
 DanteQuote dante_new_quote_q (Dante dante, DanteQuote source_quote) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	quote->buffer = malloc((source_quote->length + 1) * sizeof(char));
@@ -25,13 +34,8 @@ DanteQuote dante_new_quote_q (Dante dante, DanteQuote source_quote) {
 	return quote;
 }
 
-DanteQuote dante_new_quote_s (Dante dante, char *text) {
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	quote->length = strlen(text);
-	quote->buffer = malloc((quote->length + 1) * sizeof(char));
-	strcpy(quote->buffer, text);
-	quote->capacity = quote->length;
-	return quote;
+DanteQuote dante_duplicate_quote (Dante dante, DanteQuote source_quote) {
+	return dante_new_quote_q(dante, source_quote);
 }
 
 DanteQuote dante_new_quote_from_file (Dante dante, char *filename) {
