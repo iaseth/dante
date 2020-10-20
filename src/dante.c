@@ -21,9 +21,6 @@ int main (int argc, char const *argv[]) {
 	dante_print_canto_details(canto);
 	dante_print_dante_details(dante);
 
-	empty = dante_delete_quote(empty);
-	license = dante_delete_quote(license);
-	quote = dante_delete_quote(quote);
 	canto = dante_delete_canto(canto);
 	dante = dante_delete_dante(dante);
 }

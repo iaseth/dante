@@ -1,5 +1,8 @@
 #include "dante_dante.h"
 
+#include "dante_quote.h"
+#include "dante_canto.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,6 +62,9 @@ void dante_add_canto_to_dante (Dante dante, DanteCanto canto) {
 
 
 Dante dante_delete_dante (Dante dante) {
+	for (int i = 0; i < dante->quote_count; ++i) {
+		dante_delete_quote(dante->quotes[i]);
+	}
 	free(dante->cantos);
 	free(dante->quotes);
 	free(dante);
