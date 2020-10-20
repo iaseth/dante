@@ -1,6 +1,9 @@
 #include "dante_quote.h"
 
+#include "dante_book.h"
+
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 DanteQuote
