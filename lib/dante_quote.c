@@ -9,10 +9,10 @@ DanteQuote dante_new_quote (Dante dante) {
 
 DanteQuote dante_new_quote_n (Dante dante, uint32_t length) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	quote->length = 0;
-	quote->capacity = length;
 	quote->buffer = malloc((length + 1) * sizeof(char));
 	quote->buffer[0] = '\0';
+	quote->length = 0;
+	quote->capacity = length;
 	return quote;
 }
 
