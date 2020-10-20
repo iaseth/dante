@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define DANTE_MINIMUM_CANTOS 16
+#define DANTE_MINIMUM_CHARS 16
 #define DANTE_MINIMUM_QUOTES 16
+#define DANTE_MINIMUM_CANTOS 16
 
 
 typedef struct {

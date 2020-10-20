@@ -13,8 +13,11 @@ int main (int argc, char const *argv[]) {
 
 	DanteQuote license = dante_new_quote_from_file(dante, "LICENSE");
 	if (license != NULL) {
-		dante_print_quote_details(license);
+		//dante_print_quote_details(license);
 	}
+
+	DanteQuote empty = dante_new_quote_n(dante, 20);
+	dante_print_quote_details(empty);
 
 	dante_print_struct_sizes();
 
