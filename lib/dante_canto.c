@@ -78,8 +78,8 @@ dante_split_c (DanteQuote quote, char c)
 	for (int i = 0; i <= quote->length; i++) {
 		char current_char = quote->buffer[i];
 		if (current_char == c || current_char == '\0') {
-			length = end_index - start_index + 1;
-			current_string[length - 1] = '\0';
+			length = end_index - start_index;
+			current_string[length] = '\0';
 			current_quote = dante_new_quote_n(NULL, length);
 			strcpy(current_quote->buffer, current_string);
 			current_quote->length = length;

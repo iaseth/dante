@@ -12,7 +12,8 @@ int main (int argc, char const *argv[]) {
 	DanteCanto canto = dante_split_lines(license);
 
 	for (int i = 0; i < canto->quote_count; ++i) {
-		printf("%3d. '%s'\n", i, canto->quotes[i]->buffer);
+		DanteQuote temp = canto->quotes[i];
+		printf("%3d. [%2d/%2d] '%s'\n", i, temp->length, temp->capacity, temp->buffer);
 	}
 
 	DanteQuote empty = dante_duplicate_quote(quote);
