@@ -25,6 +25,13 @@ void dante_print_dante_details (Dante dante) {
 
 Dante dante_new_dante () {
 	Dante dante = malloc(sizeof(Dante_t));
+	dante->cantos = NULL;
+	dante->canto_count = 0;
+	dante->canto_capacity = 0;
+
+	dante->quotes = NULL;
+	dante->quote_count = 0;
+	dante->quote_capacity = 0;
 	return dante;
 }
 
