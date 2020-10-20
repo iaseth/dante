@@ -28,17 +28,19 @@ void dante_print_dante_details (Dante dante) {
 
 Dante dante_new_dante () {
 	Dante dante = malloc(sizeof(Dante_t));
-	dante->cantos = NULL;
+	dante->cantos = malloc(DANTE_MINIMUM_CANTOS * sizeof(DanteCanto_t));
 	dante->canto_count = 0;
-	dante->canto_capacity = 0;
+	dante->canto_capacity = DANTE_MINIMUM_CANTOS;
 
-	dante->quotes = NULL;
+	dante->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote_t));
 	dante->quote_count = 0;
-	dante->quote_capacity = 0;
+	dante->quote_capacity = DANTE_MINIMUM_QUOTES;
 	return dante;
 }
 
 Dante dante_delete_dante (Dante dante) {
+	free(dante->cantos);
+	free(dante->quotes);
 	free(dante);
 	return NULL;
 }
