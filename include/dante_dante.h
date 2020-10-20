@@ -26,7 +26,7 @@ struct DanteQuote_t {
 	char *buffer;
 	uint32_t length;
 	uint32_t capacity;
-	Dante dante;
+	Dante owner;
 };
 
 
@@ -34,7 +34,7 @@ struct DanteCanto_t {
 	DanteQuote *quotes;
 	uint32_t quote_count;
 	uint32_t quote_capacity;
-	Dante dante;
+	Dante owner;
 };
 
 

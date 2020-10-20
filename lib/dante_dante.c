@@ -43,7 +43,7 @@ Dante dante_new_dante () {
 
 
 void dante_add_quote_to_dante (Dante dante, DanteQuote quote) {
-	quote->dante = dante;
+	quote->owner = dante;
 	if (dante->quote_count == dante->quote_capacity) {
 		// expand dante->quotes
 	}
@@ -52,7 +52,7 @@ void dante_add_quote_to_dante (Dante dante, DanteQuote quote) {
 }
 
 void dante_add_canto_to_dante (Dante dante, DanteCanto canto) {
-	canto->dante = dante;
+	canto->owner = dante;
 	if (dante->canto_count == dante->canto_capacity) {
 		// expand dante->cantos
 	}

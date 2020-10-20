@@ -29,7 +29,7 @@ DanteQuote dante_new_quote_s (Dante dante, char *text) {
 
 DanteQuote dante_new_quote_q (DanteQuote source_quote) {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
-	dante_add_quote_to_dante(source_quote->dante, quote);
+	dante_add_quote_to_dante(source_quote->owner, quote);
 	quote->buffer = malloc((source_quote->length + 1) * sizeof(char));
 	strcpy(quote->buffer, source_quote->buffer);
 	quote->length = source_quote->length;
