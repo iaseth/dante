@@ -44,6 +44,9 @@ DanteBook dante_new_dante () {
 
 void dante_add_quote_to_book (DanteBook book, DanteQuote quote) {
 	quote->book = book;
+	if (book == NULL) {
+		return;
+	}
 	if (book->quote_count == book->quote_capacity) {
 		// expand book->quotes
 	}

@@ -5,13 +5,14 @@
 int main (int argc, char const *argv[]) {
 	DanteBook book = dante_new();
 	DanteQuote quote = dante_new_quote_s(book, "Hello, Dante!");
-	DanteCanto canto = dante_new_canto(book);
 
 	quote = dante_append_quote(quote, quote);
 
 	DanteQuote license = dante_new_quote_from_file(book, "LICENSE");
-	if (license != NULL) {
-		//dante_print_quote_details(license);
+	DanteCanto canto = dante_split_lines(license);
+
+	for (int i = 0; i < canto->quote_count; ++i) {
+		printf("%3d. '%s'\n", i, canto->quotes[i]->buffer);
 	}
 
 	DanteQuote empty = dante_duplicate_quote(quote);
