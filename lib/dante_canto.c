@@ -11,7 +11,7 @@ dante_new_canto (DanteBook book)
 {
 	DanteCanto canto = malloc(sizeof(DanteCanto_t));
 	dante_add_canto_to_book(book, canto);
-	canto->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote_t));
+	canto->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote));
 	canto->quote_count = 0;
 	canto->quote_capacity = DANTE_MINIMUM_QUOTES;
 	return canto;
@@ -34,7 +34,7 @@ dante_canto_double_capacity (DanteCanto canto)
 {
 	if (canto == NULL) return;
 	int new_capacity = canto->quote_capacity * 2;
-	int size = new_capacity * sizeof(DanteQuote_t);
+	int size = new_capacity * sizeof(DanteQuote);
 	canto->quotes = realloc(canto->quotes, size);
 	canto->quote_capacity = new_capacity;
 }

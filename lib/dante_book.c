@@ -11,11 +11,11 @@ DanteBook
 dante_new_book ()
 {
 	DanteBook book = malloc(sizeof(DanteBook_t));
-	book->cantos = malloc(DANTE_MINIMUM_CANTOS * sizeof(DanteCanto_t));
+	book->cantos = malloc(DANTE_MINIMUM_CANTOS * sizeof(DanteCanto));
 	book->canto_count = 0;
 	book->canto_capacity = DANTE_MINIMUM_CANTOS;
 
-	book->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote_t));
+	book->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote));
 	book->quote_count = 0;
 	book->quote_capacity = DANTE_MINIMUM_QUOTES;
 	return book;
