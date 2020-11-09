@@ -26,13 +26,22 @@ DANTE_MODULE_NAMES += dbook
 DANTE_OBJ_NAMES = ${addsuffix .o, ${DANTE_MODULE_NAMES}}
 DANTE_OBJS = ${addprefix build/obj/, ${DANTE_OBJ_NAMES}}
 
+
+
+DANTE_EXAMPLE_NAMES = 
+DANTE_EXAMPLE_NAMES += ten_strings
+
+DANTE_EXAMPLE_EXES = ${addprefix build/examples/, ${DANTE_EXAMPLE_NAMES}}
+
+
+
 DANTE_STATIC_LIB = build/lib/libdante.a
 DANTE_DYNAMIC_LIB = build/lib/libdante.so
 
 MAIN_SRC = src/dante.c
 MAIN_BIN = build/dante
 
-default: ${MAIN_BIN}
+default: examples ${MAIN_BIN}
 
 run: ${MAIN_BIN}
 	@./${MAIN_BIN}
@@ -45,6 +54,13 @@ debug:
 
 ${DANTE_OBJS}: build/obj/%.o: lib/%.c include/dante/%.h
 	${CC} -c ${CC_FLAGS} $< -o $@ ${INCLUDE_FLAG}
+
+
+examples: ${DANTE_EXAMPLE_EXES}
+
+${DANTE_EXAMPLE_EXES}: build/examples/%: examples/%.c ${DANTE_STATIC_LIB}
+	${CC} $< -o $@ ${DANTE_STATIC_LIB} ${INCLUDE_FLAG}
+
 
 ${DANTE_STATIC_LIB}: ${DANTE_OBJS}
 	${AR} rcs $@ $^
