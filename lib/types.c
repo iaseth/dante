@@ -6,9 +6,9 @@
 void
 dante_print_struct_sizes ()
 {
-	printf("DanteBook is %ld bytes.\n", sizeof(DanteBook_t));
-	printf("DanteCanto is %ld bytes.\n", sizeof(DanteCanto_t));
-	printf("DanteQuote is %ld bytes.\n", sizeof(DanteQuote_t));
+	printf("DanteBook is %ld bytes.\n", sizeof(struct DanteBook));
+	printf("DanteCanto is %ld bytes.\n", sizeof(struct DanteCanto));
+	printf("DanteQuote is %ld bytes.\n", sizeof(struct DanteQuote));
 }
 
 

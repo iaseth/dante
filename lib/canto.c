@@ -9,7 +9,7 @@
 DanteCanto
 dante_new_canto (DanteBook book)
 {
-	DanteCanto canto = malloc(sizeof(DanteCanto_t));
+	DanteCanto canto = malloc(sizeof(struct DanteCanto));
 	dante_add_canto_to_book(book, canto);
 	canto->quotes = malloc(DANTE_MINIMUM_QUOTES * sizeof(DanteQuote));
 	canto->quote_count = 0;

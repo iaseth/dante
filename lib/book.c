@@ -10,7 +10,7 @@
 DanteBook
 dante_new_book ()
 {
-	DanteBook book = malloc(sizeof(DanteBook_t));
+	DanteBook book = malloc(sizeof(struct DanteBook));
 	book->cantos = malloc(DANTE_MINIMUM_CANTOS * sizeof(DanteCanto));
 	book->canto_count = 0;
 	book->canto_capacity = DANTE_MINIMUM_CANTOS;

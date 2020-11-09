@@ -15,7 +15,7 @@ dante_new_quote (DanteBook book)
 DanteQuote
 dante_new_quote_n (DanteBook book, size_t length)
 {
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	DanteQuote quote = malloc(sizeof(struct DanteQuote));
 	dante_add_quote_to_book(book, quote);
 	quote->buffer = malloc((length + 1) * sizeof(char));
 	quote->buffer[0] = '\0';
@@ -27,7 +27,7 @@ dante_new_quote_n (DanteBook book, size_t length)
 DanteQuote
 dante_new_quote_s (DanteBook book, char *text)
 {
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	DanteQuote quote = malloc(sizeof(struct DanteQuote));
 	dante_add_quote_to_book(book, quote);
 	quote->length = strlen(text);
 	quote->buffer = malloc((quote->length + 1) * sizeof(char));
@@ -39,7 +39,7 @@ dante_new_quote_s (DanteBook book, char *text)
 DanteQuote
 dante_new_quote_q (DanteQuote source_quote)
 {
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	DanteQuote quote = malloc(sizeof(struct DanteQuote));
 	dante_add_quote_to_book(source_quote->book, quote);
 	quote->buffer = malloc((source_quote->length + 1) * sizeof(char));
 	strcpy(quote->buffer, source_quote->buffer);
@@ -62,7 +62,7 @@ dante_new_quote_from_file (DanteBook book, char *filename)
 		return NULL;
 	}
 
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	DanteQuote quote = malloc(sizeof(struct DanteQuote));
 	dante_add_quote_to_book(book, quote);
 
 	long p1 = ftell(fp);
@@ -83,7 +83,7 @@ dante_new_quote_from_file (DanteBook book, char *filename)
 DanteQuote
 dante_append_quote (DanteQuote q1, DanteQuote q2)
 {
-	DanteQuote quote = malloc(sizeof(DanteQuote_t));
+	DanteQuote quote = malloc(sizeof(struct DanteQuote));
 	dante_add_quote_to_book(q1->book, quote);
 	quote->length = q1->length + q2->length;
 	quote->buffer = malloc((quote->length + 1) * sizeof(char));
