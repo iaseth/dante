@@ -13,7 +13,7 @@ dante_new_quote (DanteBook book)
 }
 
 DanteQuote
-dante_new_quote_n (DanteBook book, uint32_t length)
+dante_new_quote_n (DanteBook book, size_t length)
 {
 	DanteQuote quote = malloc(sizeof(DanteQuote_t));
 	dante_add_quote_to_book(book, quote);

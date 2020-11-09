@@ -4,7 +4,7 @@
 #include "dante/types.h"
 
 DanteQuote dante_new_quote (DanteBook book);
-DanteQuote dante_new_quote_n (DanteBook book, uint32_t length);
+DanteQuote dante_new_quote_n (DanteBook book, size_t length);
 DanteQuote dante_new_quote_s (DanteBook book, char *text);
 DanteQuote dante_new_quote_q (DanteQuote source_quote);
 DanteQuote dante_duplicate_quote (DanteQuote source_quote);

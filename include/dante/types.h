@@ -2,7 +2,7 @@
 #define DANTE_TYPES_H_INCLUDED
 
 
-#include <stdint.h>
+#include <stdio.h>
 
 #define DANTE_MINIMUM_CHARS 16
 #define DANTE_MINIMUM_QUOTES 16
@@ -24,16 +24,16 @@ typedef struct DanteCanto_t *DanteCanto;
 
 struct DanteQuote_t {
 	char *buffer;
-	uint32_t length;
-	uint32_t capacity;
+	size_t length;
+	size_t capacity;
 	DanteBook book;
 };
 
 
 struct DanteCanto_t {
 	DanteQuote *quotes;
-	uint32_t quote_count;
-	uint32_t quote_capacity;
+	size_t quote_count;
+	size_t quote_capacity;
 	DanteBook book;
 };
 
@@ -41,10 +41,10 @@ struct DanteCanto_t {
 struct DanteBook_t {
 	DanteCanto *cantos;
 	DanteQuote *quotes;
-	uint32_t canto_count;
-	uint32_t canto_capacity;
-	uint32_t quote_count;
-	uint32_t quote_capacity;
+	size_t canto_count;
+	size_t canto_capacity;
+	size_t quote_count;
+	size_t quote_capacity;
 };
 
 void dante_print_struct_sizes ();
