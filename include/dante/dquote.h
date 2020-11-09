@@ -4,6 +4,7 @@
 #include "dante/types.h"
 
 extern DanteQuoteNamespace dquote;
+extern DanteQuoteNamespace dq;
 
 
 

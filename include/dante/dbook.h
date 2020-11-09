@@ -4,6 +4,7 @@
 #include "dante/types.h"
 
 extern DanteBookNamespace dbook;
+extern DanteBookNamespace db;
 
 
 

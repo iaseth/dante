@@ -5,5 +5,6 @@ struct DanteBookNamespace dbook_struct = {
 };
 
 DanteBookNamespace dbook = &dbook_struct;
+DanteBookNamespace ds = dbook;
 
 

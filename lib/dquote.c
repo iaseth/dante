@@ -5,5 +5,6 @@ struct DanteQuoteNamespace dquote_struct = {
 };
 
 DanteQuoteNamespace dquote = &dquote_struct;
+DanteQuoteNamespace dq = dquote;
 
 
