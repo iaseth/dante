@@ -3,6 +3,8 @@
 
 #include "dante/types.h"
 
+extern DanteStringNamespace dstring;
+
 
 
 #endif
