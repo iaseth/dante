@@ -1,4 +1,4 @@
-#include "dante_types.h"
+#include "dante/types.h"
 
 #include <stdio.h>
 

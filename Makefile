@@ -10,11 +10,11 @@ LINK_FLAG =
 
 RM = ${AMP}rm -f
 
-DANTE_MODULE_NAMES = dante
-DANTE_MODULE_NAMES += dante_types
-DANTE_MODULE_NAMES += dante_book
-DANTE_MODULE_NAMES += dante_quote
-DANTE_MODULE_NAMES += dante_canto
+DANTE_MODULE_NAMES = 
+DANTE_MODULE_NAMES += types
+DANTE_MODULE_NAMES +=book
+DANTE_MODULE_NAMES += quote
+DANTE_MODULE_NAMES += canto
 
 DANTE_OBJ_NAMES = ${addsuffix .o, ${DANTE_MODULE_NAMES}}
 DANTE_OBJS = ${addprefix build/obj/, ${DANTE_OBJ_NAMES}}
@@ -36,7 +36,7 @@ ${MAIN_BIN}: ${MAIN_SRC} ${DANTE_STATIC_LIB}
 debug:
 	${eval AMP := }
 
-${DANTE_OBJS}: build/obj/%.o: lib/%.c include/%.h
+${DANTE_OBJS}: build/obj/%.o: lib/%.c include/dante/%.h
 	${CC} -c ${CC_FLAGS} $< -o $@ ${INCLUDE_FLAG}
 
 ${DANTE_STATIC_LIB}: ${DANTE_OBJS}

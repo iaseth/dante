@@ -1,7 +1,7 @@
-#include "dante_book.h"
+#include "dante/book.h"
 
-#include "dante_quote.h"
-#include "dante_canto.h"
+#include "dante/quote.h"
+#include "dante/canto.h"
 
 #include <stdio.h>
 #include <stdlib.h>
