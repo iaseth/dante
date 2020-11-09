@@ -2,7 +2,9 @@
 
 #include "dante.h"
 
-int main (int argc, char const *argv[]) {
+int
+main (int argc, char const *argv[])
+{
 	DanteBook book = dante_new();
 	DanteQuote quote = dante_new_quote_s(book, "Hello, Dante!");
 

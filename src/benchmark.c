@@ -12,7 +12,7 @@ heavy_stuff () {
 }
 
 int
-main(int argc, char const *argv[])
+main (int argc, char const *argv[])
 {
 	Bolt bolt = bolt_new_bolt("Dante");
 	bolt_add_milestone ("start");
