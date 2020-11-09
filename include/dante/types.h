@@ -27,6 +27,19 @@ typedef struct DanteQuote *DanteQuote;
 typedef struct DanteCanto *DanteCanto;
 
 
+// for internal use
+struct DanteBookNamespace;
+struct DanteCantoNamespace;
+struct DanteQuoteNamespace;
+struct DanteStringNamespace;
+
+// const pointer types that are available as globals
+typedef const struct DanteBookNamespace *const DanteBookNamespace;
+typedef const struct DanteCantoNamespace *const DanteCantoNamespace;
+typedef const struct DanteQuoteNamespace *const DanteQuoteNamespace;
+typedef const struct DanteStringNamespace *const DanteStringNamespace;
+
+
 struct DanteQuote {
 	DanteBook book;
 	size_t length;
@@ -51,6 +64,23 @@ struct DanteBook {
 	size_t quote_count;
 	size_t quote_capacity;
 	DanteQuote *quotes;
+};
+
+
+struct DanteBookNamespace {
+	//
+};
+
+struct DanteCantoNamespace {
+	//
+};
+
+struct DanteQuoteNamespace {
+	//
+};
+
+struct DanteStringNamespace {
+	//
 };
 
 
