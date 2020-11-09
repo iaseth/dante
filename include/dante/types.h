@@ -23,28 +23,29 @@ typedef struct DanteCanto_t *DanteCanto;
 
 
 struct DanteQuote_t {
-	char *buffer;
+	DanteBook book;
 	size_t length;
 	size_t capacity;
-	DanteBook book;
+	char *buffer;
 };
 
 
 struct DanteCanto_t {
-	DanteQuote *quotes;
+	DanteBook book;
 	size_t quote_count;
 	size_t quote_capacity;
-	DanteBook book;
+	DanteQuote *quotes;
 };
 
 
 struct DanteBook_t {
-	DanteCanto *cantos;
-	DanteQuote *quotes;
 	size_t canto_count;
 	size_t canto_capacity;
+	DanteCanto *cantos;
+
 	size_t quote_count;
 	size_t quote_capacity;
+	DanteQuote *quotes;
 };
 
 void dante_print_struct_sizes ();
