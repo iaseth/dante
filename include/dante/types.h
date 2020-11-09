@@ -4,15 +4,24 @@
 
 #include <stdio.h>
 
+
+// minimum chars in a quote
 #define DANTE_MINIMUM_CHARS 16
+
+// minimum quotes in a canto/book
 #define DANTE_MINIMUM_QUOTES 16
+
+// minimum cantos in a book
 #define DANTE_MINIMUM_CANTOS 16
 
 
+// structs for internal use
 struct DanteBook;
 struct DanteQuote;
 struct DanteCanto;
 
+// typedeffed pointer types for external use
+typedef char *DanteString;
 typedef struct DanteBook *DanteBook;
 typedef struct DanteQuote *DanteQuote;
 typedef struct DanteCanto *DanteCanto;
@@ -43,6 +52,7 @@ struct DanteBook {
 	size_t quote_capacity;
 	DanteQuote *quotes;
 };
+
 
 void dante_print_struct_sizes ();
 
